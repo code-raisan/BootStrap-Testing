@@ -22,9 +22,14 @@
         prog = document.getElementById("main-progress");
         now = 0
         setInterval(() =>{
-            now += 10;
+            now += 5;
             prog.style.width = now + "%";
-        }, 300);
+            prog.innerText = now + "%";
+            
+            if(now > 100){
+                now = 0;
+            }
+        }, 100);
     </script>
 </body>
 </html>
