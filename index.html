@@ -20,14 +20,23 @@
     </main>
     <script>
         prog = document.getElementById("main-progress");
-        now = 0
+        let now = 0;
+        let noww = 0;
         setInterval(() =>{
-            now += 1;
-            prog.style.width = now + "%";
+            now++;
+            if(!now > 100){
+                noww++;
+            }
+            
+            prog.style.width = noww + "%";
             prog.innerText = now + "%";
             
+            if(now > 100){
+                noww = 0;
+            }
+            
             if(now > 102){
-                now = 0;
+                noww = 0;
             }
         }, 100);
     </script>
